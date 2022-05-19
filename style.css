@@ -1,0 +1,208 @@
+/* Andy bell CSS reset  */
+
+/* / Box sizing rules / */
+*,
+::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* / Remove default margin / */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* / Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed / */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* / Set core root defaults / */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* / Set core body defaults / */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* / A elements that don't have a class get default styles / */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* / Make images easier to work with / */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* / Inherit fonts for inputs and buttons / */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* / Remove all animations, transitions and smooth scroll for people that prefer not to see them / */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  ::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Import font */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap");
+
+/* CSS custom properties */
+
+html {
+  --bg-color: #0d1a2d;
+  --primary-color: #15273f;
+  --accent: #06fdfa;
+  --primary-ultra-light: #f8ffff;
+  --space-s: 0.5rem;
+  --space-m: 1.5rem;
+  --space-l: 3rem;
+  --primary-light: #88acd8;
+  color: var(--primary-ultra-light);
+  font-family: "Montserrat";
+  font-weight: 300;
+  background-color: var(--bg-color);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+}
+
+a {
+  transition: color 0.2s ease-in-out;
+}
+
+.stack > * + * {
+  margin-block-start: var(--space-m);
+}
+
+.flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.split-first :not(:first-child) {
+  margin-inline-start: auto;
+}
+
+.split-second :nth-child(3) {
+  margin-inline-start: auto;
+}
+
+.center-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: block;
+  position: relative;
+  max-width: 25rem;
+  background-color: var(--bg-color);
+  border-radius: 0.5rem;
+  padding: var(--space-m);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  color: var(--primary-light, #88acd8);
+}
+
+.card h2 {
+  color: var(--primary-ultra-light);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+.card--inline {
+  display: flex;
+}
+
+.card--inline {
+  justify-content: start;
+  align-items: center;
+}
+
+.card--inline :not(:last-child) {
+  margin-inline-end: var(--space-s);
+}
+
+.price {
+  color: var(--accent);
+}
+
+.card .avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-inline-end: var(--space-m);
+  border: 0.1rem solid white;
+}
+
+.card span {
+  color: var(--primary-ultra-light);
+}
+
+.wrapper {
+  position: relative;
+}
+
+.img-wrapper::after {
+  content: url(/images/icon-view.svg);
+  display: grid;
+  place-items: center;
+  position: absolute;
+  inset: 0 0 0 0;
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.img-wrapper:hover::after {
+  content: url(/images/icon-view.svg);
+  position: absolute;
+  inset: 0 0 0 0;
+  background-color: rgba(6, 253, 250, 70%);
+}
